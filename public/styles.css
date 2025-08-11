@@ -1,0 +1,76 @@
+:root {
+	--bg: #0f0f12;
+	--panel: #151820;
+	--text: #e9eef4;
+	--accent: #68d391;
+	--danger: #f56565;
+}
+
+* { box-sizing: border-box; }
+html, body {
+	margin: 0;
+	height: 100%;
+	background: var(--bg);
+	color: var(--text);
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+#game-root {
+	min-height: 100%;
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+#game-canvas {
+	background: #000;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#hud {
+	width: 440px;
+	background: var(--panel);
+	border-radius: 10px;
+	padding: .5rem .75rem;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.hud-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hud-item span { opacity: .8; margin-right: .5rem; }
+
+#touch-controls {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: .75rem;
+	width: 440px;
+}
+
+#touch-controls button {
+	appearance: none;
+	border: 1px solid rgba(255,255,255,.12);
+	background: #1b2130;
+	color: var(--text);
+	padding: .75rem;
+	border-radius: 10px;
+	font-size: 1.25rem;
+	box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+	cursor: pointer;
+}
+
+#touch-controls button:active {
+	transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+	#game-canvas, #hud, #touch-controls { width: 100%; }
+	#game-canvas { height: auto; }
+}
+
+
